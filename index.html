@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kid Wong</title>
+    <style>
+        .carousel-inner .item img{
+            width: 500px;
+           }
+
+        .carousel-inner img{
+            margin: 0 auto;
+           }
+        .bgimage{
+            background: #fff url(images/huawen3.jpg) 0 0;}
+
+        #carousel-example-generic{
+            margin-top: 50px;}
+
+        .thumb-nail img{
+            width: 150px;
+            height: 150px;}
+
+        #top{position: fixed;
+            bottom: 0px;
+            right: 0px;
+            color: white;
+            display: none;
+            background-color: #0c0408;font-size: 15px;}
+        .dropdown-menu{
+            height: 280px;
+            }
+        .dropdown-menu li{
+            height: 40px;
+           }
+        .dropdown-menu button{
+            width: 100%;
+            background-color: #0c0408;
+            color: white;
+            font-weight: bold;
+            height: 30px;
+        }
+        .change{
+            width: 100%;
+            height: 60px;
+            cursor: pointer;
+            }
+        #drag{
+            position: absolute;
+            top: 100px;
+            left: 0;
+        }
+        #drag img{
+            width: 150px;
+            border-radius: 50%;
+            background-color: #86ccd2;
+        }
+
+        body{overflow-x: hidden;}/*隐藏水平滚动条*/
+    </style>
+    <script src="jquery-3.2.1.js"></script>
+    <script src="bs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+<div class="container">
+    <div class="nav navbar navbar-inverse navbar-fixed-top" id="mynav"><!--若忘记加id，按钮出不来-->
+        <div class="container">
+            <div class="navbar-header">
+                <a href="" class="navbar-brand" style="padding: 0;margin: 0;"></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="nav navbar-nav navbar-left" style="margin-top: 0;">
+                    <li class="active" id="1"><a href="#"><span class="glyphicon glyphicon-user"></span> 个人信息</a></li>
+                    <li id="2"><a href="#"><span class="glyphicon glyphicon-globe"></span> 工作经历</a></li>
+                    <li id="3"><a href="#"><span class="glyphicon glyphicon-pencil"></span> 专业技能</a></li>
+                    <li id="4"><a href="#"><span class="glyphicon glyphicon-earphone"></span> 联系方式</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">更换轮播图背景<span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><img class="change" src="images/huawen1.jpg" alt=""></li><!--为什么用a标签包裹图片，点击以后会返回到默认的背景图片？-->
+                            <li><img class="change" src="images/huawen7.jpg" alt=""></li>
+                            <li><img class="change" src="images/huawen4.jpg" alt=""></li>
+                            <li><img class="change" src="images/huawen5.jpg" alt=""></li>
+                            <li><img class="change" src="images/huawen8.jpg" alt=""></li>
+                            <li><img class="change" src="images/huawen6.jpg" alt=""></li>
+                            <button id="moren">默认</button>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item active bgimage">
+                        <img src="images/me1.jpg" alt="">
+                    </div>
+                    <div class="item bgimage">
+                        <img src="images/me2.jpg" alt="">
+                    </div>
+                    <div class="item bgimage">
+                        <img src="images/me3.jpg" alt="">
+                    </div>
+                    <div class="item bgimage">
+                        <img src="images/me6.jpg" alt="">
+                    </div>
+                </div>
+
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                </ol>
+
+                <a href="#carousel-example-generic" class="left carousel-control" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a href="#carousel-example-generic" class="right carousel-control" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <h3>个人信息</h3>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <p>姓名：王**</p>
+                <p>性别：女</p>
+                <p> 教育经历：2011年-2015年在广东****大学就读****管理专业</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <h3>工作经历</h3>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <p>
+                    工作公司：2015年-2017年 在东莞市*********有限公司担任数据分析员&核数员
+                </p>
+                <p>
+                    工作内容：
+                </p>
+                <p>
+                    1.收集和简单分析公司海外发电站的相关生产数据
+                </p>
+                <p>
+                    2.核查海外电站的营运支出是否合理以及协助其向香港总部报销
+                </p>
+                <p>
+                    3.不定期到缅甸出差，了解了有关签证的知识以及缅甸、印尼、孟加拉等东南亚国家签证办理的相关条件
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <h3>专业技能</h3>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <p><span class="glyphicon glyphicon-ok"> PhotoShop</span></p>
+                <p><span class="glyphicon glyphicon-ok"> JavaScript</span></p>
+                <p><span class="glyphicon glyphicon-ok"> jQuery</span></p>
+                <p><span class="glyphicon glyphicon-ok"> BootStrap</span></p>
+                <p><span class="glyphicon glyphicon-ok"> 英语专业八级</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <h3>联系方式</h3>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <ul class="list-group list-group-item-info">
+                    <li class="list-group-item"><span class="glyphicon glyphicon-phone"></span> Mobile : 188********</li>
+                    <li class="list-group-item"><span class="glyphicon glyphicon-envelope"></span> e-mail : &nbsp;&nbsp;5423*****@qq.com</li>
+                    <li class="list-group-item"><span class="glyphicon glyphicon-comment"></span> wechat : kidkid*********</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<button id="top">回到顶部</button>
+
+</body>
+<script>
+       $(".change").click(function () {
+           var imageSource=$(this).attr("src");
+           $(".bgimage").css("background","#fff url("+imageSource+") 0 0");//注意：url("+imageSource+")不这样写，会变成字符串
+       })
+       $("#moren").click(function () {
+           $(".bgimage").css("background","#fff url(images/huawen3.jpg) 0 0");
+       })
+       $(".navbar-left li").click(function () {
+           $(this).addClass("active").siblings().removeClass("active");
+           var number=$(this).attr("id")-1;
+           var scroll=$(".panel").eq(number).offset().top;//这个是获取每个面板距离文档的高度
+           var scrollFinally=scroll-60;
+           $("html,body").animate({scrollTop:scrollFinally},1000); //让滚动条自动滚动到指定的高度
+       });
+
+       $(window).scroll(function () {
+           //$("#top").fadeIn(1000);
+           $(window).scrollTop()>50?$("#top").fadeIn():$("#top").fadeOut();//设置这个语句是为了和下面的click发生的slidedown事件不冲突
+       })
+
+       $("#top").click(function () {
+           //$(window).scrollTop(0);
+           $("html,body").animate({scrollTop:0},1000);
+           $(this).slideDown();
+       })
+
+       $(".carousel").carousel({interval:2500});//修改幻灯片时间。不用修改BS源码
+
+</script>
+</html>
